@@ -1,0 +1,13 @@
+.custom-footer {
+    display: flex;
+    height: calc(70px);
+    width: 100%;
+    padding: 0.5rem 0.5rem;
+    background: rgba(0, 0, 0, 0.2);
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.7);
+}
