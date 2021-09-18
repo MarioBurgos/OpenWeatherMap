@@ -1,12 +1,10 @@
 <app-navbar></app-navbar>
 <div class="container-fluid custom-skeleton-content">
+    <ng-container *ngIf="isLoading">
+        <div class="custom-loader">
+            <img [src]="loaderImg">
+        </div>
+    </ng-container>
     <router-outlet></router-outlet>
-
 </div>
 <app-footer></app-footer>
-
-<ng-container *ngIf="isLoading">
-    <div class="custom-loader">
-        <img [src]="loaderImg">
-    </div>
-</ng-container>

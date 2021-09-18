@@ -25,6 +25,7 @@ export class FetchWeatherService {
   }
 
   getForecast(cityName: string){
+    console.log(this.http.get(`${this.URI_FORECAST}${cityName}`));
     return this.http.get(`${this.URI_FORECAST}${cityName}`)
   }
 }

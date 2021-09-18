@@ -4,16 +4,11 @@
             <h1>{{ title }}</h1>
         </div>
     </div>
-
     <form class="form-group">
         <div class="input-group input-group-lg w-50 mx-auto">
             <input [(ngModel)]="location" name="location" class="form-control" placeholder="Country, state, district, county, city...">
             <button class="btn btn-outline-primary ml-2" [routerLink]="['/weather/current', location]">Current Weather</button>
             <button class="btn btn-outline-primary ml-2" [routerLink]="['/weather/forecast', location]">Forecast</button>
-
         </div>
-
     </form>
-
-
 </div>

@@ -1,1 +1,100 @@
-<p>dashboard works!</p>
+<div class="container-fluid">
+    <div class="row pt-5">
+        <div class="col-12 text-center">
+            <h1>{{title}}</h1>
+        </div>
+    </div>
+    <div class="row pt-5">
+        <div class="card col-lg-9 mx-auto px-4 pb-4 pt-5 text-justify">
+            <p>{{ introP1 }}</p>
+            <p>{{ introP2 }}</p>
+            <p>{{ introP3 }}</p>
+            <div class="row px-0">
+                <div class="col-10"></div>
+                <div class="col-2">
+                    <button (click)="toggleShowMore()">Show more</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row py-5">
+        <ng-container *ngIf="showMore">
+            <div class="card bg-dark text-light col-lg-9 mx-auto mb-5 px-4 pb-4 pt-5 text-justify">
+                <p>There you are!</p>
+                <p>I will start saying that I started this mini-project thinking on its modular structure. I wanted to code an app that is truly scalable and portable. That is why I created a module for each link at the navbar that contain the components
+                    that I believed were necessary.</p>
+                <p>Then, the structure I thought is the following:</p>
+                <div class="img-box">
+                    <div class="card bg-light p-3">
+                        <img class="custom-img" src="../../../../assets/img/dashboard/img01.PNG" height="400" alt="img01">
+                        <caption class="text-dark text-center">Modular structure</caption>
+                    </div>
+                    <div class="card bg-light p-3">
+                        <img class="custom-img" src="../../../../assets/img/dashboard/img02.PNG" height="400" alt="img02">
+                        <caption class="text-dark text-center"> Modules & Components</caption>
+                    </div>
+                </div>
+                <p><br>See that the page is built in a layout that contains the Navigation Bar and the Footer. The Skeleton, which is the frame-like of the page, has both of the former named components plus the router-outlet in it, making the whole Single
+                    Page App as it can be seen in the next image.
+                </p>
+                <div class="img-box">
+                    <div class="card bg-light p-3">
+                        <img class="custom-img" src="../../../../assets/img/dashboard/img03.PNG" width="400" alt="img03">
+                        <caption class="text-dark text-center">'skeleton.component.html'</caption>
+                    </div>
+                </div>
+                <p><br> The routing has been constructed in lazy-loading type for each module.</p>
+                <div class="img-box">
+                    <div class="card bg-light p-3">
+                        <img class="custom-img" src="../../../../assets/img/dashboard/img04.PNG" height="300" alt="img04">
+                        <caption class="text-dark text-center">'app-routing.module.ts'</caption>
+                    </div>
+                    <div class="card bg-light p-3">
+                        <img class="custom-img" src="../../../../assets/img/dashboard/img06.PNG" height="300" alt="img06">
+                        <caption class="text-dark text-center">'weather-routing.module.ts'</caption>
+                    </div>
+                </div>
+                <p><br>By clicking on the navbar link 'Weather', the router loads the Search Component.</p>
+                <p>In order to pass the input text to the 'Current' and 'Forecast' Components for them to know which location data must they look for through the 'FetchWeatherService' (see the image called 'fetch-weather.service.ts' below), I took the quick
+                    and simple option. I created a 2-way binding between the input and an attribute called location and then I added the parameter to the url at the [routerLink] of each button.</p>
+                <div class="img-box">
+                    <div class="card bg-light p-3">
+                        <img class="custom-img" src="../../../../assets/img/dashboard/img05.PNG" width="600" alt="img05">
+                        <caption class="text-dark text-center">'search.component.html'</caption>
+                    </div>
+                </div>
+                <p><br>Each button leads to two different components. Both of them will make an API call using the location typed, through a service:</p>
+                <div class="img-box">
+                    <div class="card bg-light p-3">
+                        <img class="custom-img" src="../../../../assets/img/dashboard/img07.PNG" width="600" alt="img07">
+                        <caption class="text-dark text-center">'fetch-weather.service.ts'<br><small>(I know, I should have all these strings in a constants file... And the 'apiKey' somehow protected)</small></caption>
+                    </div>
+                </div>
+                <p><br> The first one component it is shown by clicking the Current Weather button, and brings information by making a call to the OpenWeatherMap API through the 'fetch-weather.service'.</p>
+                <p>See that the subscriptions are created 'ngOnInit' and they are dumped 'ngOnDestroy'.</p>
+                <div class="img-box">
+                    <div class="card bg-light p-3">
+                        <img class="custom-img" src="../../../../assets/img/dashboard/img08.PNG" height="500" alt="img08">
+                        <caption class="text-dark text-center">'current.component.ts'</caption>
+                    </div>
+                </div>
+                <p><br>Well, once the service has fetch the data it is only a matter of web desigh to show it on the component. I know it can be done better than this, but I like it simple :D</p>
+                <div class="img-box">
+                    <div class="card bg-light p-3">
+                        <img class="custom-img" src="../../../../assets/img/dashboard/img09.PNG" height="500" alt="img09">
+                        <caption class="text-dark text-center">'current-weather.json'</caption>
+                    </div>
+                    <div class="card bg-light p-3">
+                        <img class="custom-img" src="../../../../assets/img/dashboard/img10.PNG" height="500" alt="img10">
+                        <caption class="text-dark text-center">table in 'current.component.html'</caption>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+
+    </div>
+
+
+</div>

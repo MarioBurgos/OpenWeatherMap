@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/internal/Subscription';
+import { CURRENT_PAGE_DATA } from 'src/app/data/constants/weather/current/current-page.const';
 import { FetchWeatherService } from 'src/app/services/fetch-weather.service';
 
 @Component({
@@ -9,6 +10,8 @@ import { FetchWeatherService } from 'src/app/services/fetch-weather.service';
   styleUrls: ['./current.component.scss']
 })
 export class CurrentComponent implements OnInit, OnDestroy {
+
+  title = CURRENT_PAGE_DATA.TITLE;
 
   timestamp: Date;
   location: any;

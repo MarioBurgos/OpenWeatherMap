@@ -1,1 +1,53 @@
-<p>forecast works!</p>
+<div class="row pt-5">
+    <div class="col-12 text-center">
+        <h1>{{title}}</h1>
+    </div>
+</div>
+<div class="row text-center">
+    <div class="col-xs-6 col-md-8 mx-auto py-5">
+        <div class="card card-body" *ngIf="weather">
+            <div class="table-responsive">
+                <table class="table table-striped table-primary table-sm align-middle">
+                    <thead class="thead-dark">
+                        <tr class="table table-dark">
+                            <th colspan="9" style="text-align: center;">{{weather.city.name}}
+                                <p style="font-size: 0.5em;">({{weather.city.coord.lat}},{{weather.city.coord.lon}})</p>
+                            </th>
+                        </tr>
+                        <tr class="table-dark" style="text-align: center;">
+                            <th></th>
+                            <th></th>
+                            <th>TEMP <br>(ºC)</th>
+                            <th>FEELS LIKE <br>(ºC)</th>
+                            <th>MIN <br>(ºC)</th>
+                            <th>MAX <br>(ºC)</th>
+                            <th>HUMIDITY <br>(%)</th>
+                            <th>PRESSURE <br>(HPa)</th>
+                            <th></th>
+
+                        </tr>
+                    </thead>
+                    <tbody class="table table-striped">
+                        <tr style="text-align: center;" *ngFor="let temp of weather.list; let i=index;">
+                            <td>
+                                <span style="font-size: 0.5rem;">{{ weather.list[i].dt_txt }}</span>
+                                <figcaption style="font-size: 0.5rem; font-weight: 600;">{{ weather.list[i].weather[0].description }}</figcaption>
+                                <img src="http://openweathermap.org/img/wn/{{ weather.list[i].weather[0].icon }}.png" alt="{{ weather.list[i].weather[0].icon }}">
+                            </td>
+                            <td style="font-size: 0.5rem;"></td>
+                            <td style="vertical-align: middle;">{{ weather.list[i].main.temp }}</td>
+                            <td style="vertical-align: middle;">{{ weather.list[i].main.feels_like }}</td>
+                            <td style="vertical-align: middle;">{{ weather.list[i].main.temp_min }}</td>
+                            <td style="vertical-align: middle;">{{ weather.list[i].main.temp_max }}</td>
+                            <td style="vertical-align: middle;">{{ weather.list[i].main.humidity }}</td>
+                            <td style="vertical-align: middle;">{{ weather.list[i].main.pressure }}</td>
+                            <td style="vertical-align: middle;"></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>

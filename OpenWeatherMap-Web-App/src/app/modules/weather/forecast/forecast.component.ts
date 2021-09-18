@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/internal/Subscription';
+import { FORECAST_PAGE_DATA } from 'src/app/data/constants/weather/forecast/forecast-page.const';
 import { FetchWeatherService } from 'src/app/services/fetch-weather.service';
 
 @Component({
@@ -9,6 +10,8 @@ import { FetchWeatherService } from 'src/app/services/fetch-weather.service';
   styleUrls: ['./forecast.component.scss']
 })
 export class ForecastComponent implements OnInit {
+
+  title = FORECAST_PAGE_DATA.TITLE;
 
   location: any;
   weather: any;
@@ -27,7 +30,6 @@ export class ForecastComponent implements OnInit {
 
   ngOnInit(): void {
     this.subUrlParams = this.activatedRouteService.paramMap.subscribe( params => {
-      //console.log(params);
       this.location = params.get("id");
       this.getWeather(this.location);
     });

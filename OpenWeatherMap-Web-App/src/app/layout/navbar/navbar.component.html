@@ -1,9 +1,22 @@
 <div class="custom-navbar">
-    <a>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/375px-Angular_full_color_logo.svg.png" height="50" alt="Logo">
-    </a>
+    <div class="custom-logo-box">
+        <a>
+            <img class="logo" src="https://openweathermap.org/themes/openweathermap/assets/img/logo_white_cropped.png" height="50" alt="OpenWeatherMap-Logo">
+        </a>
+        <a>
+            <img class="logo align-middle" src="https://www.pngix.com/pngfile/big/282-2822531_png-white-plus-sign-plus-grey-png-transparent.png" height="20" alt="OpenWeatherMap-Logo">
+        </a>
 
-    <div>
-        <button routerLink="/owm/home"><i class="fas fa-home"></i></button>
+        <a>
+            <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/375px-Angular_full_color_logo.svg.png" height="50" alt="Angular-Logo">
+        </a>
+
     </div>
+
+    <ul class="custom-links">
+        <li><a [routerLink]="['weather']">Weather</a></li>
+        <li><a [routerLink]="['home']">Home</a></li>
+        <li><a [routerLink]="['about']">About</a></li>
+    </ul>
+
 </div>

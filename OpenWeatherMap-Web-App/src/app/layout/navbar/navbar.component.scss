@@ -2,8 +2,25 @@
     height: calc(80px);
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem 1rem;
-    padding-left: 2rem;
+    padding: 1rem 2rem;
     background: rgba(0, 0, 0, 0.9);
+}
+
+.custom-logo-box {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    margin-right: 1.5rem;
+}
+
+.custom-links {
+    display: flex;
+    list-style-type: none;
+    text-decoration: none;
+    li {
+        padding-top: 1.5rem;
+        margin-left: 1.5rem;
+    }
 }

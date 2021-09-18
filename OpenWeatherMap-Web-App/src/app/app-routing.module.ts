@@ -13,7 +13,12 @@ const routes: Routes = [
       {
         path: 'weather',
         loadChildren: ()=> import('./modules/weather/weather.module').then(m=>m.WeatherModule)
-      }
+      },
+      {
+        path: 'about',
+        loadChildren: ()=> import('./modules/about/about.module').then(m=>m.AboutModule)
+      },
+
     ]
   }
 
