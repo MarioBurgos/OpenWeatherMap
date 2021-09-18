@@ -9,10 +9,10 @@ const routes: Routes = [
     path: '', component: SearchComponent
   },
   {
-    path: 'current', component: CurrentComponent
+    path: 'current/:id', component: CurrentComponent, pathMatch: 'full'
   },
   {
-    path: 'forecast', component: ForecastComponent
+    path: 'forecast/:id', component: ForecastComponent, pathMatch: 'full'
   }
 
 

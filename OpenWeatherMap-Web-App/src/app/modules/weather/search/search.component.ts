@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { SEARCH_PAGE_DATA } from 'src/app/data/constants/weather/search/search-page.const';
 
 @Component({
   selector: 'app-search',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
+  title = SEARCH_PAGE_DATA.TITLE;
+
+  location: string ="";
+
   constructor() { }
 
   ngOnInit(): void {
-  }
 
+  }
 }
